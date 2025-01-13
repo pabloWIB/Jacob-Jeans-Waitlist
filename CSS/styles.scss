@@ -6,29 +6,6 @@ $bleacheddenimLight: #add8e6;
 $lightGray: #d3d3d3;
 $whiteBone: #f5f5f5;
 
-/*  SCROLLBAR  */
-
-html{
-  scroll-behavior: smooth;
-}
-
-::-webkit-scrollbar {
-  width: 5px;
-  background: $lightGray;
-}
-
-::-webkit-scrollbar-thumb {
-  background: $bleacheddenimDark;
-  // border-radius: 10px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  cursor: pointer;
-  background: $darkBlue;
-}
-
-/*  SCROLLBAR  */
-
 // OVERLAYS
 
 body {
@@ -171,137 +148,149 @@ p {
   width: 100%;
   height: 100%;
   z-index: 20;
-  .modal-content {
-    width: 100%;
-    height: 100%;
-    background-color: white;
+  backdrop-filter: blur(7px);
+  place-content: center;
+  align-items: center;
+  > :nth-child(1) {
     display: flex;
-    place-content: center;
-    align-items: center;
+    border-radius: 20px;
+    flex-flow: column wrap;
+    justify-content: space-between;
+    height: 98.25%;
+    width: 97.5%;
+    background: url('../IMG/JPG/repeat.jpg');
+    object-fit: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    margin: 0 auto;    
     > :nth-child(1) {
       display: flex;
-      border-radius: 20px;
-      flex-flow: column wrap;
-      justify-content: space-between;
-      height: 97%;
-      width: 98.5%;
-      background: $whiteBone;
-      box-shadow: 0px 0px 7px 0px rgba(rgb(255, 255, 255), 0.3);
-      border: 2px solid #01183a;
-      > :nth-child(1) {
-        display: flex;
-        flex-flow: row wrap;
-        justify-content: flex-end;
-        margin-top: 1rem;
-        margin-right: 1rem;
-        img {
-          width: 90%;
-          width: 30px;
-          cursor: pointer;
+      flex-flow: row wrap;
+      justify-content: flex-end;
+      margin-top: 1rem;
+      margin-right: 1rem;
+      img {
+        width: 90%;
+        width: 30px;
+        cursor: pointer;
+        background-color: $darkBlue;
+        border-radius: 50%;
+        padding: .15rem;
+        transition: .35s;
+        &:hover{
+          transition: .35s;
+          transform: scale(1.05);
         }
       }
-      > :nth-child(2) {
-        margin: 0 auto;
-        width: 90%;
-        text-align: center;
+    }
+    > :nth-child(2) {
+      margin: 0 auto;
+      width: 90%;
+      text-align: center;
+      display: flex;
+      flex-flow: column wrap;
+      background-color: $darkBlue;
+      padding: 3.5rem 0rem;
+      border-radius: 16px;
+      box-shadow: 0px 0px 8px 1px rgb(92, 92, 92);
+      > :nth-child(1) {
         display: flex;
         flex-flow: column wrap;
+        gap: 1.75rem;
+        margin: 0 auto;
+        width: 90%;
         > :nth-child(1) {
           display: flex;
           flex-flow: column wrap;
           gap: 1.75rem;
-          > :nth-child(1) {
-            display: flex;
-            flex-flow: column wrap;
-            gap: 1.75rem;
-            h2 {
-              all: unset;
-              color: $darkBlue;
-              font-size: 3.5rem;
-              font-weight: 500;
-              font-family: "Fanwood Text", serif;
-              font-style: italic;
-            }
-            p {
-              all: unset;
-              font-weight: 500;
-              font-size: 1.15rem;
-              color: $darkBlue;
-              font-family: "Libre Baskerville", serif;
-              letter-spacing: 1px;
-            }
-            label {
-              all: unset;
-              font-weight: 500;
-              font-size: 1.05rem;
-              color: $darkBlue;
-              font-family: "League Spartan", serif;
+          h2 {
+            all: unset;
+            color: $whiteBone;
+            font-size: 3.5rem;
+            font-weight: 500;
+            font-family: "Fanwood Text", serif;
+            font-style: italic;
+          }
+          p {
+            all: unset;
+            font-weight: 500;
+            font-size: 1.15rem;
+            color: $whiteBone;
+            font-family: "Libre Baskerville", serif;
+            letter-spacing: 1px;
+          }
+          label {
+            all: unset;
+            font-weight: 500;
+            font-size: 1.05rem;
+            color: $darkBlue;
+            font-family: "League Spartan", serif;
 
-              letter-spacing: 1px;
+            letter-spacing: 1px;
+          }
+        }
+      }
+      .subscribe-form {
+        margin: 0 auto;
+        width: 90%;
+        max-width: 450px;
+        .input-group {
+          margin-bottom: 1rem;
+          .input-wrapper {
+            position: relative;
+            display: flex;
+            align-items: center;
+            .email-icon {
+              position: absolute;
+              left: 12px;
+              width: 20px;
+              height: 20px;
+              color: $darkBlue;
+            }
+            input {
+              font-family: "League Spartan", serif;
+              width: 100%;
+              padding: 0.75rem 1rem 0.75rem 2.5rem;
+              border: 1px solid $darkBlue;
+              border-radius: 0.375rem;
+              font-size: 1rem;
+              transition: border-color 0.2s ease;
+              outline: none;
+              &:focus {
+                border-color: #00183d;
+                box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+              }
+            }
+            input::placeholder {
+              color: $darkBlue;
             }
           }
         }
-        .subscribe-form {
-          margin: 0 auto;
-          width: 90%;
-          max-width: 450px;
-          .input-group {
-            margin-bottom: 1rem;
-            .input-wrapper {
-              position: relative;
-              display: flex;
-              align-items: center;
-              .email-icon {
-                position: absolute;
-                left: 12px;
-                width: 20px;
-                height: 20px;
-                color: $darkBlue;
-              }
-              input {
-                font-family: "League Spartan", serif;
-                width: 100%;
-                padding: 0.75rem 1rem 0.75rem 2.5rem;
-                border: 1px solid $darkBlue;
-                border-radius: 0.375rem;
-                font-size: 1rem;
-                transition: border-color 0.2s ease;
-                outline: none;
-                &:focus {
-                  border-color: #00183d;
-                  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
-                }
-              }
-              input::placeholder {
-                color: $darkBlue;
-              }
-            }
-          }
-          .submit-btn {
-            font-family: "League Spartan", serif;
-            letter-spacing: 0.8px;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            width: 100%;
-            padding: 0.75rem 1.5rem;
-            background-color: #3b82f6;
-            color: white;
-            border: none;
-            border-radius: 0.375rem;
-            font-weight: 500;
-            font-size: 1rem;
-            cursor: pointer;
-            transition: background-color 0.2s ease;
+        .submit-btn {
+          font-family: "League Spartan", serif;
+          letter-spacing: 0.8px;
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          width: 100%;
+          padding: 0.75rem 1.5rem;
+          background-color: #3b82f6;
+          color: white;
+          border: none;
+          border-radius: 0.375rem;
+          font-weight: 500;
+          font-size: 1rem;
+          cursor: pointer;
+          transition: background-color 0.2s ease;
+          transition: 0.4s;
+          &:hover {
+            background-color: #1145b5;
             transition: 0.4s;
-            &:hover {
-              background-color: #1145b5;
-              transition: 0.4s;
-            }
           }
-          .submit-btn:active {
-            background-color: #1d4ed8;
-          }
+        }
+        .submit-btn:active {
+          background-color: #1d4ed8;
         }
       }
     }
@@ -496,31 +485,16 @@ main {
     flex-flow: column wrap;
     align-items: center;
     justify-content: space-between;
-    height: 97%;
-    width: 98.5%;
-    > * {
+    height: 100%;
+    width: 100%;
+    nav, header, footer{
       width: 100%;
-      max-width: 1440px;
-    }
-    nav {
-      border-radius: 20px;
-      // backdrop-filter: blur(7px);
-      // position: relative;
-      // background-image: linear-gradient(
-      //   to right,
-      //   rgba($darkBlue, .7),
-      //   rgba($whiteBone, .7)
-      // );
       background-color: $darkBlue;
-      // z-index: 1;
-      width: 100%;
       opacity: 0;
       visibility: hidden;
-      transform: translateY(-50%) scale(0.95);
-      transition: 0.75s;
-      box-shadow: 0px 0px 7px 0px rgba(black, 0.3);
-      border: 2px solid white;
-      > :nth-child(1) {
+      transition: .75s;
+      >:nth-child(1){
+        max-width: 2000px;
         margin: 0 auto;
         width: 97.5%;
         padding: 1rem 0rem;
@@ -528,6 +502,11 @@ main {
         flex-flow: row wrap;
         align-items: center;
         justify-content: space-between;
+      }
+    }
+    nav {
+      transform: translateY(-50%);
+      > :nth-child(1) {
         div {
           h2, a {
             all: unset;
@@ -539,48 +518,17 @@ main {
             color: $whiteBone;
           }
         }
-        // >:nth-child(1){
-        //   h2{
-        //     color: $whiteBone;
-        //   }
-        // }
-        // >:nth-child(2){
-        //   h2{
-        //     color: $darkBlue;
-        //   }
-        // }
       }
     }
-    // nav::before {
-    //   position: absolute;
-    //   content: "";
-    //   top: 0;
-    //   right: 0;
-    //   bottom: 0;
-    //   left: 0;
-    //   background-image: linear-gradient(
-    //     to right,
-    //     rgba($darkBlue, .7),
-    //     rgba($whiteBone, .7)
-    //   );
-    //   border-radius: 20px;
-    //   backdrop-filter: blur(7px);
-    //   z-index: -1;
-    //   transition: opacity 0.5s linear;
-    //   opacity: 0;
-    // }
-    // nav:hover::before {
-    //   opacity: 0.8;
-    // }
     header {
+      background-color: transparent;
+      opacity: 1;
+      visibility: visible;
       > :nth-child(1) {
-        display: flex;
         flex-flow: column wrap;
-        align-items: center;
         gap: 1rem;
         opacity: 0;
         transform: scale(2);
-        transition: 1s;
         > div {
           width: 100%;
           display: flex;
@@ -606,26 +554,8 @@ main {
       }
     }
     footer {
-      display: flex;
-      flex-flow: row wrap;
-      justify-content: space-between;
-      border-radius: 20px;
-      background-color: $darkBlue;
-      width: 100%;
-      transition: 0.75s;
-      box-shadow: 0px 0px 7px 0px rgba(black, 0.3);
-      border: 2px solid white;
-      opacity: 0;
-      transform: scale(0.95) translateY(50%);
-      transition: 1s;
+      transform: translateY(50%);
       > :nth-child(1) {
-        margin: 0 auto;
-        width: 97.5%;
-        padding: 0.4rem 0rem;
-        display: flex;
-        flex-flow: row wrap;
-        align-items: center;
-        justify-content: space-between;
         > :nth-child(1) {
           display: flex;
           flex-flow: row nowrap;
@@ -711,7 +641,6 @@ main {
               border-radius: 0.375rem;
               font-weight: 500;
               font-size: 1.2rem;
-
               cursor: pointer;
               transition: background-color 0.2s ease;
               white-space: nowrap;
@@ -735,24 +664,49 @@ main {
 
 @media (max-width: 875px) {
   main {
-    height: 100%;
-    overflow: auto;
-    padding: 0.5rem 0rem;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    place-content: center;
+    opacity: 0;
+    transition: 2s;
     > :nth-child(1) {
+      display: flex;
       flex-flow: column wrap;
-      gap: 5.5rem;
+      align-items: center;
+      justify-content: space-between;
+      height: 100%;
+      width: 100%;
+      nav, header, footer{
+        width: 100%;
+        background-color: $darkBlue;
+        opacity: 0;
+        visibility: hidden;
+        transition: .75s;
+        >:nth-child(1){
+          max-width: 2000px;
+          margin: 0 auto;
+          width: 97.5%;
+          padding: 1rem 0rem;
+          display: flex;
+          flex-flow: row wrap;
+          align-items: center;
+          justify-content: space-between;
+        }
+      }
       nav {
-        border: 1px solid white;
+        transform: translateY(-50%);
         > :nth-child(1) {
-          width: 92.5%;
-          padding: 0.75rem 0rem;
           div {
-            h2 {
+            h2, a {
               all: unset;
               font-family: "Fanwood Text", serif;
               font-weight: 600;
-              font-size: 0.85rem;
-              letter-spacing: 0.85px;
+              font-size: 1rem;
+              letter-spacing: 1px;
               cursor: pointer;
               color: $whiteBone;
             }
@@ -760,49 +714,73 @@ main {
         }
       }
       header {
+        background-color: transparent;
+        opacity: 1;
+        visibility: visible;
         > :nth-child(1) {
-          gap: 0.75rem;
+          flex-flow: column wrap;
+          gap: 1rem;
+          opacity: 0;
+          transform: scale(2);
+          > div {
+            width: 100%;
+            display: flex;
+            flex-flow: row wrap;
+            align-items: center;
+            place-content: center;
+          }
           > :nth-child(1) {
             img {
-              max-width: 262.5px;
+              width: 90%;
+              max-width: 375px;
             }
           }
           > :nth-child(2) {
+            opacity: 0;
+            transform: scale(0.5) translateY(-100%);
+            transition: 2s;
             img {
-              max-width: 393.75px;
+              width: 90%;
+              max-width: 562.5px;
             }
           }
         }
       }
       footer {
-        display: flex;
-        flex-flow: column wrap;
-        justify-content: space-between;
-        background-color: transparent;
-        width: 100%;
-        border: none;
-        padding: 1rem 0rem;
+        transform: translateY(50%);
         > :nth-child(1) {
-          flex-flow: column wrap;
-          gap: 1.75rem;
           > :nth-child(1) {
-            order: 2;
+            display: flex;
+            flex-flow: row nowrap;
+            justify-content: flex-start;
             gap: 0.5rem;
             a {
+              display: flex;
+              flex-flow: row wrap;
+              place-content: center;
+              align-items: center;
+              padding: 0.25rem;
+              border-radius: 20px;
+              background: #01265d;
               img {
+                width: 100%;
                 max-width: 30px;
+                transition: 0.4s;
+                &:hover {
+                  transition: 0.4s;
+                  scale: 1.05;
+                }
               }
             }
           }
           > :nth-child(2) {
-            order: 1;
             display: flex;
-            flex-flow: column wrap;
+            flex-flow: row wrap;
             justify-content: flex-end;
             .subscribe-form2 {
               width: 100%;
               display: flex;
-              flex-flow: column wrap;
+              flex-flow: row wrap;
               align-items: center;
               gap: 0.65rem;
               font-size: 1.2rem;
@@ -811,7 +789,7 @@ main {
                   font-family: "League Spartan", serif;
                   letter-spacing: 1.5px;
                   font-weight: 600;
-                  color: $darkBlue;
+                  color: $whiteBone;
                 }
               }
               .input-wrapper {
@@ -839,7 +817,7 @@ main {
                     border-color: #3b82f6;
                     box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
                   }
-
+  
                   &::placeholder {
                     color: $darkBlue;
                   }
@@ -856,9 +834,19 @@ main {
                 border-radius: 0.375rem;
                 font-weight: 500;
                 font-size: 1.2rem;
+                cursor: pointer;
                 transition: background-color 0.2s ease;
                 white-space: nowrap;
                 font-family: "League Spartan", serif;
+                transition: 0.45s;
+                &:hover {
+                  background-color: #00317b;
+                  transition: 0.45s;
+                }
+                &:active {
+                  background-color: rgb(0, 53, 133);
+                  transition: 0.45s;
+                }
               }
             }
           }
@@ -916,117 +904,10 @@ main {
     footer {
       transition: 1s;
       opacity: 1;
+      visibility: visible;
       transform: scale(1) translateY(0%);
     }
   }
-}
-
-.what-say {
-  display: none;
-  visibility: hidden;
-  opacity: 0;
-  transition: 0.5s;
-  background: $whiteBone;
-  padding-top: 25px;
-  .testimonial {
-    margin: 0 20px 40px;
-    .testimonial-content {
-      padding: 35px 25px 35px 50px;
-      margin-bottom: 35px;
-      background: $lightGray;
-      position: relative;
-    }
-    .testimonial-content:before {
-      content: "";
-      position: absolute;
-      bottom: -30px;
-      left: 0;
-      border-top: 15px solid #718076;
-      border-left: 15px solid transparent;
-      border-bottom: 15px solid transparent;
-    }
-    .testimonial-content:after {
-      content: "";
-      position: absolute;
-      bottom: -30px;
-      right: 0;
-      border-top: 15px solid #718076;
-      border-right: 15px solid transparent;
-      border-bottom: 15px solid transparent; 
-    }
-    .testimonial-icon {
-      width: 50px;
-      height: 45px;
-      background: $darkBlue;
-      text-align: center;
-      font-size: 22px;
-      color: #fff;
-      line-height: 42px;
-      position: absolute;
-      top: 37px;
-      left: -19px;
-    }
-    .testimonial-icon:before {
-      content: "";
-      border-bottom: 16px solid #01183a;
-      border-left: 18px solid transparent;
-      position: absolute;
-      top: -16px;
-      left: 1px;
-    }    
-    .description {
-      font-size: 1.3rem;
-      font-style: italic;
-      font-family: "Fanwood Text", serif;
-      color: black;
-      line-height: 23px;
-      margin: 0;
-    }
-    .title {
-      display: block;
-      font-size: 1.1rem;
-      font-weight: 700;
-      color: $darkBlue;
-      text-transform: capitalize;
-      letter-spacing: 1px;
-      margin: 0 0 5px 0;
-    }
-    .post {
-      display: block;
-      font-family: "Libre Baskerville", serif;
-      font-weight: 600;
-      font-size: 1rem;
-      color: $darkBlue;
-    }
-  }
-}
-
-.credentials{
-  display: flex;
-  flex-flow: row wrap;
-  align-items: center;
-  gap: 1rem;
-  >:nth-child(2){
-    img{
-      width: 100%;
-      max-width: 27.5px;
-    }
-  }
-}
-
-.owl-theme .owl-controls {
-  margin-top: 20px;
-}
-
-.owl-theme .owl-controls .owl-page span {
-  background: #ccc;
-  opacity: 1;
-  transition: all 0.4s ease 0s;
-}
-
-.owl-theme .owl-controls .owl-page.active span,
-.owl-theme .owl-controls.clickable .owl-page:hover span {
-  background: $darkBlue;
 }
 
 .sectionAnimation {

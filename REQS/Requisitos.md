@@ -47,3 +47,12 @@ Ensure that the design doesn’t require scrolling too much—use collapsible se
 If possible, add a small section for recommendations or text encouraging users to sign up for updates, but keep it minimal. This could be placed in the footer.
 
 Yh actually maybe the country flag? That work work next to the feedback comment. Basically to indicate where the feedback is coming from. Yh overall two comments, I think would work in the footer, just maybe for now.
+
+
+
+------
+
+
+
+Revisions #1
+
