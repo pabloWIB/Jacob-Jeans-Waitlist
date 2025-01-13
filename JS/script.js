@@ -112,7 +112,7 @@ function hideExitModal() {
 // Temporizador para el modal de salida
 setTimeout(() => {
     canShowModal = true;
-}, 4000);
+}, 3000);
 
 // Event Listeners
 document.addEventListener("mouseleave", e => {
@@ -146,9 +146,20 @@ $(document).ready(function () {
     });
   });
 
-  // Abrir el popup usando ID
-document.getElementById('aboutTitle').addEventListener('click', function() {
-    document.getElementById('overlayAbout').style.display = 'block';
+  document.getElementById('aboutTitle').addEventListener('click', function(event) {
+    const dropdown = document.getElementById('aboutDropdown');
+    dropdown.classList.toggle('show');
+    event.stopPropagation();
+});
+
+// Close dropdown when clicking outside
+document.addEventListener('click', function(event) {
+    const dropdown = document.getElementById('aboutDropdown');
+    if (dropdown.classList.contains('show') && 
+        !event.target.closest('#aboutTitle') && 
+        !event.target.closest('.dropdown-content')) {
+        dropdown.classList.remove('show');
+    }
 });
 
 // Cerrar el popup usando ID
