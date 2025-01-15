@@ -194,11 +194,7 @@ p {
     height: 98.25%;
     width: 97.5%;
     max-width: 2000px;
-    background: url('../IMG/JPG/repeatToned.jpg');
-    object-fit: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
+    background-color: $darkBlue;
     margin: 0 auto;    
     > :nth-child(1) {
       display: flex;
@@ -226,11 +222,7 @@ p {
       text-align: center;
       display: flex;
       flex-flow: column wrap;
-      background-color: $darkBlue;
       max-width: 775px;
-      padding: 3.5rem 0rem;
-      border-radius: 16px;
-      box-shadow: 0px 0px 8px 1px rgb(92, 92, 92);
       > :nth-child(1) {
         display: flex;
         flex-flow: column wrap;
