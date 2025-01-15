@@ -160,7 +160,7 @@ p {
 }
 
 .modal {
-  display: block;
+  display: none;
   position: fixed;
   top: 0;
   left: 0;
@@ -223,10 +223,14 @@ p {
 .modal > :nth-child(1) > :nth-child(2) > :nth-child(1) {
   display: flex;
   flex-flow: column wrap;
-  gap: 1.75rem;
+  gap: 1rem;
   margin: 0 auto;
   width: 90%;
   max-width: 600px;
+}
+.modal > :nth-child(1) > :nth-child(2) > :nth-child(1) span {
+  font-weight: 600;
+  letter-spacing: 0.75px;
 }
 .modal > :nth-child(1) > :nth-child(2) > :nth-child(1) > :nth-child(1) {
   display: flex;
@@ -241,27 +245,13 @@ p {
   font-family: "Fanwood Text", serif;
   font-style: italic;
 }
-.modal > :nth-child(1) > :nth-child(2) > :nth-child(1) > :nth-child(1) .container {
-  text-align: left;
-}
-.modal > :nth-child(1) > :nth-child(2) > :nth-child(1) > :nth-child(1) .container p {
+.modal > :nth-child(1) > :nth-child(2) > :nth-child(1) > :nth-child(1) p {
   all: unset;
+  text-align: left;
   color: #f5f5f5;
   font-size: 1.5rem;
   font-weight: 500;
   font-family: "Fanwood Text", serif;
-}
-.modal > :nth-child(1) > :nth-child(2) > :nth-child(1) > :nth-child(1) .container .image-wrapper {
-  padding: 0;
-  margin: 0;
-  float: right;
-  width: 120px;
-  transform: translateX(-2%);
-}
-.modal > :nth-child(1) > :nth-child(2) > :nth-child(1) > :nth-child(1) .container .image-wrapper img {
-  width: 100%;
-  height: auto;
-  vertical-align: middle;
 }
 .modal > :nth-child(1) > :nth-child(2) > :nth-child(1) > :nth-child(1) label {
   all: unset;

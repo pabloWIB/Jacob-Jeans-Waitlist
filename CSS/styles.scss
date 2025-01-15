@@ -175,7 +175,7 @@ p {
 }
 
 .modal {
-  display: block;
+  display: none;
   position: fixed;
   top: 0;
   left: 0;
@@ -233,10 +233,14 @@ p {
       > :nth-child(1) {
         display: flex;
         flex-flow: column wrap;
-        gap: 1.75rem;
+        gap: 1rem;
         margin: 0 auto;
         width: 90%;
         max-width: 600px;
+        span{
+          font-weight: 600;
+          letter-spacing: .75px;
+        }
         > :nth-child(1) {
           display: flex;
           flex-flow: column wrap;
@@ -249,29 +253,14 @@ p {
             font-family: "Fanwood Text", serif;
             font-style: italic;
           }
-          .container {
+          p{
+            all: unset;
             text-align: left;
-            p{
-              all: unset;
-              color: $whiteBone;
-              font-size: 1.5rem;
-              font-weight: 500;
-              font-family: "Fanwood Text", serif;
-            }
-            .image-wrapper {
-              padding: 0;
-              margin: 0;
-              float: right;
-              width: 120px;
-              transform: translateX(-2%);
-              img {
-                width: 100%;
-                height: auto;
-                vertical-align: middle;
-              }
-            }
+            color: $whiteBone;
+            font-size: 1.5rem;
+            font-weight: 500;
+            font-family: "Fanwood Text", serif;
           }
-
           label {
             all: unset;
             font-weight: 500;
