@@ -77,19 +77,19 @@ body {
   position: absolute;
   background-color: #fff;
   min-width: 300px;
+  max-width: 300px;
   box-shadow: 0 8px 16px rgba(0,0,0,0.2);
   padding: 20px;
-  border-radius: 8px;
-  z-index: 1000;
+  border-radius: 0px 20px 20px 0px;
+  z-index: 20;
   top: -1000px; /* Start above the viewport */
-  left: 50%;
-  transform: translateX(-50%);
-  opacity: 0;
+  left: 0%;
+  // opacity: 0;
   transition: all 0.3s ease-in-out;
 }
 
 .dropdown-content.show {
-  top: 0%; /* Position right below the heading */
+  top: 10%; /* Position right below the heading */
   opacity: 1;
 }
 
@@ -192,7 +192,8 @@ p {
     justify-content: space-between;
     height: 98.25%;
     width: 97.5%;
-    background: url('../IMG/JPG/repeat.jpg');
+    max-width: 2000px;
+    background: url('../IMG/JPG/repeatToned.jpg');
     object-fit: contain;
     background-repeat: no-repeat;
     background-position: center;
@@ -234,6 +235,7 @@ p {
         gap: 1.75rem;
         margin: 0 auto;
         width: 90%;
+        max-width: 600px;
         > :nth-child(1) {
           display: flex;
           flex-flow: column wrap;
@@ -246,14 +248,29 @@ p {
             font-family: "Fanwood Text", serif;
             font-style: italic;
           }
-          p {
-            all: unset;
-            font-weight: 500;
-            font-size: 1.15rem;
-            color: $whiteBone;
-            font-family: "Libre Baskerville", serif;
-            letter-spacing: 1px;
+          .container {
+            text-align: left;
+            p{
+              all: unset;
+              color: $whiteBone;
+              font-size: 1.5rem;
+              font-weight: 500;
+              font-family: "Fanwood Text", serif;
+            }
+            .image-wrapper {
+              padding: 0;
+              margin: 0;
+              float: right;
+              width: 120px;
+              transform: translateX(-23%);
+              img {
+                width: 100%;
+                height: auto;
+                vertical-align: middle;
+              }
+            }
           }
+
           label {
             all: unset;
             font-weight: 500;
@@ -413,6 +430,7 @@ p {
     justify-content: space-between;
     height: 98.25%;
     width: 97.5%;
+    max-width: 2000px;
     background: $darkBlue;
     > div {
       width: 90%;
