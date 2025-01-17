@@ -152,24 +152,29 @@ $(document).ready(function () {
     event.stopPropagation();
 });
 
-// Close dropdown when clicking outside
-document.addEventListener('click', function(event) {
-    const dropdown = document.getElementById('aboutDropdown');
-    if (dropdown.classList.contains('show') && 
-        !event.target.closest('#aboutTitle') && 
-        !event.target.closest('.dropdown-content')) {
-        dropdown.classList.remove('show');
+const reviewsHeading = document.getElementById('reviews');
+const popup = document.getElementById('reviewsPopup');
+const closeButton = document.getElementById('close-button');
+
+// Event Listeners
+reviewsHeading.addEventListener('click', () => {
+    popup.classList.add('active');
+});
+
+closeButton.addEventListener('click', () => {
+    popup.classList.remove('active');
+});
+
+// Close popup when clicking outside
+popup.addEventListener('click', (e) => {
+    if (e.target === popup) {
+        popup.classList.remove('active');
     }
 });
 
-// Cerrar el popup usando ID
-document.getElementById('closeAbout').addEventListener('click', function() {
-    document.getElementById('overlayAbout').style.display = 'none';
-});
-
-// Cerrar el popup si se hace clic fuera del contenido
-document.getElementById('overlayAbout').addEventListener('click', function(e) {
-    if (e.target === this) {
-        this.style.display = 'none';
+// Close popup with Escape key
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && popup.classList.contains('active')) {
+        popup.classList.remove('active');
     }
 });

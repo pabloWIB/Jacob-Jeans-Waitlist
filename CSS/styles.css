@@ -475,6 +475,97 @@ p {
     max-width: 35px;
   }
 }
+.reviews-popup {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+}
+.reviews-popup .popup-content {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  width: 90%;
+  max-width: 600px;
+  max-height: 80vh;
+  position: relative;
+  animation: popupFade 0.3s ease-in-out;
+}
+.reviews-popup .popup-content .popup-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #eee;
+}
+.reviews-popup .popup-content .popup-header .close-button {
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: #666;
+}
+.reviews-popup .popup-content .popup-header .close-button:hover {
+  color: #333;
+}
+.reviews-popup .popup-content .reviews-container {
+  overflow-y: auto;
+  max-height: calc(80vh - 100px);
+}
+.reviews-popup .popup-content .reviews-container .review-item {
+  padding: 15px 0;
+  border-bottom: 1px solid #eee;
+}
+.reviews-popup .popup-content .reviews-container .review-item .review-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+.reviews-popup .popup-content .reviews-container .review-item .review-header .stars {
+  color: #ffd700;
+  margin-top: 5px;
+}
+.reviews-popup .popup-content .reviews-container .review-item .review-header .review-date {
+  color: #666;
+  font-size: 0.9em;
+}
+
+.reviews-popup.active {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@keyframes popupFade {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.review-item:last-child {
+  border-bottom: none;
+}
+
+.opinionCountry {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  gap: 1.5rem;
+}
+.opinionCountry > :nth-child(2) img {
+  width: 100%;
+  max-width: 30px;
+}
+
 main {
   width: 100%;
   height: 100vh;
