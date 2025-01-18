@@ -230,13 +230,9 @@ p {
   flex-flow: column wrap;
   gap: 1.75rem;
 }
-.modal > :nth-child(1) > :nth-child(2) > :nth-child(1) > :nth-child(1) h2 {
-  all: unset;
-  color: #f5f5f5;
-  font-size: 3.5rem;
-  font-weight: 500;
-  font-family: "Fanwood Text", serif;
-  font-style: italic;
+.modal > :nth-child(1) > :nth-child(2) > :nth-child(1) > :nth-child(1) > :nth-child(1) img {
+  width: 90%;
+  max-width: 850px;
 }
 .modal > :nth-child(1) > :nth-child(2) > :nth-child(1) > :nth-child(1) p {
   all: unset;
@@ -384,9 +380,7 @@ p {
   display: flex;
   place-content: center;
   align-items: center;
-  pointer-events: none;
   transition: opacity 0.3s ease;
-  opacity: 0;
 }
 .thank-you-container > :nth-child(1) {
   display: flex;
@@ -560,10 +554,6 @@ p {
   flex-flow: row wrap;
   align-items: center;
   gap: 1.5rem;
-}
-.opinionCountry > :nth-child(2) img {
-  width: 100%;
-  max-width: 30px;
 }
 
 main {
