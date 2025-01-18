@@ -176,14 +176,14 @@ p {
 }
 
 .modal {
-  display: none;
+  // display: none;
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
   z-index: 20;
-  backdrop-filter: blur(7px);
+  backdrop-filter: blur(20px);
   place-content: center;
   align-items: center;
   > :nth-child(1) {
@@ -194,7 +194,11 @@ p {
     height: 98.25%;
     width: 97.5%;
     max-width: 2000px;
-    background-color: $darkBlue;
+    background: url('../IMG/JPG/Blackhoodie4.jpg');
+    object-fit: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
     margin: 0 auto;    
     > :nth-child(1) {
       display: flex;
@@ -223,6 +227,10 @@ p {
       display: flex;
       flex-flow: column wrap;
       max-width: 775px;
+      padding: 4.5rem 2rem;
+      border-radius: 12px;
+      background-color: $darkBlue;
+      box-shadow: 0px 0px 10px .1px #011a41;
       > :nth-child(1) {
         display: flex;
         flex-flow: column wrap;
@@ -396,14 +404,14 @@ p {
   width: 100%;
   height: 100%;
   z-index: 30;
-  backdrop-filter: blur(7px);
+  backdrop-filter: blur(20px);
   text-align: center;
   display: flex;
   place-content: center;
   align-items: center;
-  // pointer-events: none;
+  pointer-events: none;
   transition: opacity 0.3s ease;
-  // opacity: 0;
+  opacity: 0;
   > :nth-child(1) {
     display: flex;
     border-radius: 20px;
@@ -412,7 +420,11 @@ p {
     height: 98.25%;
     width: 97.5%;
     max-width: 2000px;
-    background: $darkBlue;
+    background: url('../IMG/JPG/Blackhoodie4.jpg');
+    object-fit: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
     > div {
       width: 90%;
       margin: 0 auto;
@@ -426,20 +438,28 @@ p {
       img {
         width: 90%;
         width: 30px;
+        background-color: $darkBlue;
+        border-radius: 50%;
+        padding: .25rem;
         cursor: pointer;
       }
     }
     > :nth-child(2) {
       display: flex;
       flex-flow: column wrap;
-      gap: 2rem;
-      h2 {
-        all: unset;
-        color: white;
-        font-size: 3.5rem;
-        font-weight: 500;
-        font-family: "Fanwood Text", serif;
-        font-style: italic;
+      gap: 2.5rem;
+      width: 90%;
+      max-width: 775px;
+      padding: 4.5rem 2rem;
+      border-radius: 12px;
+      background-color: $darkBlue;
+      box-shadow: 0px 0px 10px .1px #011a41;
+      position: relative;
+      >:nth-child(1){
+        img{
+          width: 90%;
+          max-width: 850px;
+        }
       }
       p {
         all: unset;
@@ -449,14 +469,53 @@ p {
         font-family: "Libre Baskerville", serif;
         letter-spacing: 1px;
       }
-      > :nth-child(4) {
+      > :nth-child(3) {
         img {
           width: 90%;
-          max-width: 50px;
+          max-width: 250px;
           transition: 0.5s;
           &:hover {
             transition: 0.5s;
             scale: 1.05;
+          }
+        }
+      }
+      >:nth-child(4){
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        display: flex;
+        flex-flow: row wrap;
+        align-items: center;
+        place-content: center;
+        >:nth-child(1){
+          width: 97%;
+          height: 95%;
+          position: relative;
+          >:nth-child(1){
+            left: 0;
+            top: 0;
+          }
+          >:nth-child(2){
+            right: 0;
+            top: 0;
+          }
+          >:nth-child(3){
+            left: 0;
+            bottom: 0;
+          }
+          >:nth-child(4){
+            right: 0;
+            bottom: 0;
+          }
+          div{
+            position: absolute;
+            img{
+              width: 100%;
+              max-width: 20px;
+            }
           }
         }
       }
@@ -611,7 +670,6 @@ main {
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
-    // animation: changeBackground 5s infinite; /* Animation lasts 5 seconds and repeats infinitely */
     nav, header, footer{
       width: 100%;
       background-color: $darkBlue;
