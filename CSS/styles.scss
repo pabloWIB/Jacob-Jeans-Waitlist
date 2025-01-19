@@ -613,11 +613,11 @@ p {
         color: $darkBlue;
         font-size: 1.5rem;
       }
-      > :nth-child(2) {
-        img {
-          width: 100%;
-          max-width: 150px;
-        }
+      h2{
+        font-family: "Fanwood Text", serif;
+        color: $darkBlue;
+        letter-spacing: .075rem;
+        font-size: 2rem;
       }
     }
     .reviews-container {

@@ -588,9 +588,11 @@ p {
   color: #01265d;
   font-size: 1.5rem;
 }
-.reviews-popup .popup-content .popup-header > :nth-child(2) img {
-  width: 100%;
-  max-width: 150px;
+.reviews-popup .popup-content .popup-header h2 {
+  font-family: "Fanwood Text", serif;
+  color: #01265d;
+  letter-spacing: 0.075rem;
+  font-size: 2rem;
 }
 .reviews-popup .popup-content .reviews-container {
   overflow-y: auto;
