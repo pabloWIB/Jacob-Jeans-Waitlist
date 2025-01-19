@@ -671,14 +671,18 @@ main > :nth-child(1) {
   background-position: center;
   background-size: cover;
 }
-main > :nth-child(1) nav, main > :nth-child(1) header, main > :nth-child(1) footer {
+main > :nth-child(1) nav,
+main > :nth-child(1) header,
+main > :nth-child(1) footer {
   width: 100%;
   background-color: #01265d;
   opacity: 0;
   visibility: hidden;
   transition: 0.75s;
 }
-main > :nth-child(1) nav > :nth-child(1), main > :nth-child(1) header > :nth-child(1), main > :nth-child(1) footer > :nth-child(1) {
+main > :nth-child(1) nav > :nth-child(1),
+main > :nth-child(1) header > :nth-child(1),
+main > :nth-child(1) footer > :nth-child(1) {
   max-width: 2000px;
   margin: 0 auto;
   width: 97.5%;
@@ -843,7 +847,9 @@ main > :nth-child(1) footer > :nth-child(1) > :nth-child(2) .subscribe-form2 .su
 }
 
 @media (max-width: 845px) {
-  main > :nth-child(1) nav > :nth-child(1), main > :nth-child(1) header > :nth-child(1), main > :nth-child(1) footer > :nth-child(1) {
+  main > :nth-child(1) nav > :nth-child(1),
+  main > :nth-child(1) header > :nth-child(1),
+  main > :nth-child(1) footer > :nth-child(1) {
     width: 95%;
   }
   main > :nth-child(1) nav {

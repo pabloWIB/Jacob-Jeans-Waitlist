@@ -1,5 +1,3 @@
-
-
 // Elementos del DOM
 const closeWindow = document.getElementById("closeWindow");
 const thankContainer = document.getElementById("thankContainer");
@@ -10,7 +8,6 @@ const closeBtn = document.querySelector(".close");
 let formSubmitted = false;
 let showModal = true;
 let canShowModal = false;
-
 
 // Funciones para el contenedor de agradecimiento
 function showThankYou() {
@@ -55,7 +52,7 @@ window.onclick = e => {
 
 closeWindow.addEventListener("click", hideThankYou);
 
-document.getElementById('aboutTitle').addEventListener('click', function(event) {
+document.getElementById('aboutTitle').addEventListener('click', function (event) {
     const dropdown = document.getElementById('aboutDropdown');
     dropdown.classList.toggle('show');
     event.stopPropagation();
@@ -87,9 +84,6 @@ document.addEventListener('keydown', (e) => {
         popup.classList.remove('active');
     }
 });
-
-
-
 
 $(function () {
     // Definir la secuencia de animaciones
