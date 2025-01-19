@@ -1,3 +1,96 @@
+
+
+// Elementos del DOM
+const closeWindow = document.getElementById("closeWindow");
+const thankContainer = document.getElementById("thankContainer");
+const modal = document.getElementById("exitModal");
+const closeBtn = document.querySelector(".close");
+
+// Variables de estado
+let formSubmitted = false;
+let showModal = true;
+let canShowModal = false;
+
+
+// Funciones para el contenedor de agradecimiento
+function showThankYou() {
+    thankContainer.classList.remove("Cerrar");
+    thankContainer.classList.add("thank-you-container-show");
+}
+
+function hideThankYou() {
+    thankContainer.classList.remove("thank-you-container-show");
+    thankContainer.classList.add("Cerrar");
+}
+
+// Funciones para el modal
+function showExitModal() {
+    modal.style.display = "block";
+}
+
+function hideExitModal() {
+    modal.style.display = "none";
+}
+
+// Temporizador para el modal de salida
+setTimeout(() => {
+    canShowModal = true;
+}, 3000);
+
+// Event Listeners
+document.addEventListener("mouseleave", e => {
+    if (e.clientY <= 0 && showModal && !formSubmitted && canShowModal) {
+        showExitModal();
+        showModal = false;
+    }
+});
+
+closeBtn.onclick = hideExitModal;
+
+window.onclick = e => {
+    if (e.target === modal) {
+        hideExitModal();
+    }
+};
+
+closeWindow.addEventListener("click", hideThankYou);
+
+document.getElementById('aboutTitle').addEventListener('click', function(event) {
+    const dropdown = document.getElementById('aboutDropdown');
+    dropdown.classList.toggle('show');
+    event.stopPropagation();
+});
+
+const reviewsHeading = document.getElementById('reviews');
+const popup = document.getElementById('reviewsPopup');
+const closeButton = document.getElementById('close-button');
+
+// Event Listeners
+reviewsHeading.addEventListener('click', () => {
+    popup.classList.add('active');
+});
+
+closeButton.addEventListener('click', () => {
+    popup.classList.remove('active');
+});
+
+// Close popup when clicking outside
+popup.addEventListener('click', (e) => {
+    if (e.target === popup) {
+        popup.classList.remove('active');
+    }
+});
+
+// Close popup with Escape key
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && popup.classList.contains('active')) {
+        popup.classList.remove('active');
+    }
+});
+
+
+
+
 $(function () {
     // Definir la secuencia de animaciones
     const animations = [
@@ -33,12 +126,13 @@ document.getElementById('form').addEventListener('submit', function (event) {
     btn.value = 'Suscribing...';
 
     const serviceID = 'default_service';
-   const templateID = 'template_inofmni';
+    const templateID = 'template_inofmni';
 
     emailjs.sendForm(serviceID, templateID, this)
         .then(() => {
             btn.value = 'Suscribed';
             formSubmitted = true; // Marcar como enviado
+            hideExitModal();
             showThankYou(); // Mostrar mensaje de agradecimiento
             this.reset(); // Opcional: resetear el formulario
         }, (err) => {
@@ -53,12 +147,13 @@ document.getElementById('form2').addEventListener('submit', function (event) {
     btn2.value = 'Suscribing...';
 
     const serviceID = 'default_service';
-   const templateID = 'template_1n53v5q';
+    const templateID = 'template_1n53v5q';
 
     emailjs.sendForm(serviceID, templateID, this)
         .then(() => {
             btn2.value = 'Suscribed';
             formSubmitted = true; // Marcar como enviado
+            hideExitModal();
             showThankYou(); // Mostrar mensaje de agradecimiento
             this.reset(); // Opcional: resetear el formulario
         }, (err) => {
@@ -68,113 +163,3 @@ document.getElementById('form2').addEventListener('submit', function (event) {
 });
 
 // El resto del código permanece igual...
-
-// Elementos del DOM
-const closeWindow = document.getElementById("closeWindow");
-const thankContainer = document.getElementById("thankContainer");
-const modal = document.getElementById("exitModal");
-const closeBtn = document.querySelector(".close");
-
-// Variables de estado
-let formSubmitted = false;
-let showModal = true;
-let canShowModal = false;
-
-// Función para controlar el scroll del body
-function toggleScroll(disable) {
-    document.body.style.overflow = disable ? 'hidden' : 'auto';
-}
-
-// Funciones para el contenedor de agradecimiento
-function showThankYou() {
-    thankContainer.classList.remove("Cerrar");
-    thankContainer.classList.add("thank-you-container-show");
-    toggleScroll(true); // Deshabilitar scroll
-}
-
-function hideThankYou() {
-    thankContainer.classList.remove("thank-you-container-show");
-    thankContainer.classList.add("Cerrar");
-    toggleScroll(false); // Habilitar scroll
-}
-
-// Funciones para el modal
-function showExitModal() {
-    modal.style.display = "block";
-    toggleScroll(true); // Deshabilitar scroll
-}
-
-function hideExitModal() {
-    modal.style.display = "none";
-    toggleScroll(false); // Habilitar scroll
-}
-
-// Temporizador para el modal de salida
-setTimeout(() => {
-    canShowModal = true;
-}, 3000);
-
-// Event Listeners
-document.addEventListener("mouseleave", e => {
-    if (e.clientY <= 0 && showModal && !formSubmitted && canShowModal) {
-        showExitModal();
-        showModal = false;
-    }
-});
-
-closeBtn.onclick = hideExitModal;
-
-window.onclick = e => {
-    if (e.target === modal) {
-        hideExitModal();
-    }
-};
-
-closeWindow.addEventListener("click", hideThankYou);
-
-$(document).ready(function () {
-    $("#testimonial-slider").owlCarousel({
-      items: 3,
-      itemsDesktop: [1000, 3],
-      itemsDesktopSmall: [980, 2],
-      itemsTablet: [768, 2],
-      itemsMobile: [650, 1],
-      pagination: true,
-      navigation: false,
-      slideSpeed: 1000,
-      autoPlay: true
-    });
-  });
-
-  document.getElementById('aboutTitle').addEventListener('click', function(event) {
-    const dropdown = document.getElementById('aboutDropdown');
-    dropdown.classList.toggle('show');
-    event.stopPropagation();
-});
-
-const reviewsHeading = document.getElementById('reviews');
-const popup = document.getElementById('reviewsPopup');
-const closeButton = document.getElementById('close-button');
-
-// Event Listeners
-reviewsHeading.addEventListener('click', () => {
-    popup.classList.add('active');
-});
-
-closeButton.addEventListener('click', () => {
-    popup.classList.remove('active');
-});
-
-// Close popup when clicking outside
-popup.addEventListener('click', (e) => {
-    if (e.target === popup) {
-        popup.classList.remove('active');
-    }
-});
-
-// Close popup with Escape key
-document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && popup.classList.contains('active')) {
-        popup.classList.remove('active');
-    }
-});

@@ -68,20 +68,22 @@ body {
   padding: 20px;
   border-radius: 20px;
   z-index: 20;
-  top: -1000px; /* Start above the viewport */
+  top: -1000px;
   left: 0%;
   opacity: 0;
   transition: all 0.3s ease-in-out;
 }
 
 .dropdown-content.show {
-  top: 10%; /* Position right below the heading */
+  top: 10%;
   left: 2.5%;
   opacity: 1;
 }
 
 .dropdown-content h2 {
   margin-top: 0;
+  text-align: center;
+  font-size: 2rem;
   color: #333;
 }
 
@@ -162,6 +164,7 @@ p {
 }
 
 .modal {
+  display: none;
   position: fixed;
   top: 0;
   left: 0;
@@ -216,7 +219,7 @@ p {
   display: flex;
   flex-flow: column wrap;
   max-width: 775px;
-  padding: 4.5rem 2rem;
+  padding: 4.5rem 0rem;
   border-radius: 12px;
   background-color: #01265d;
   box-shadow: 0px 0px 10px 0.1px #011a41;
@@ -432,7 +435,7 @@ p {
   gap: 2.5rem;
   width: 90%;
   max-width: 775px;
-  padding: 4.5rem 2rem;
+  padding: 2.5rem 0rem;
   border-radius: 12px;
   background-color: #01265d;
   box-shadow: 0px 0px 10px 0.1px #011a41;
@@ -549,35 +552,62 @@ p {
   position: relative;
   animation: popupFade 0.3s ease-in-out;
 }
+.reviews-popup .popup-content > :nth-child(1) {
+  width: 100%;
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  justify-content: flex-end;
+}
+.reviews-popup .popup-content > :nth-child(1) > :nth-child(1) {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+}
+.reviews-popup .popup-content > :nth-child(1) > :nth-child(1) > :nth-child(1) {
+  background: #01265d;
+  padding: 0.25rem;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.reviews-popup .popup-content > :nth-child(1) > :nth-child(1) > :nth-child(1) img {
+  cursor: pointer;
+  width: 100%;
+  max-width: 50px;
+}
 .reviews-popup .popup-content .popup-header {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
-  margin-bottom: 20px;
-  padding-bottom: 10px;
-  border-bottom: 1px solid #eee;
+  padding-bottom: 1.5rem;
+  flex-flow: column wrap;
+  align-items: center;
 }
-.reviews-popup .popup-content .popup-header .close-button {
-  background: none;
-  border: none;
-  font-size: 24px;
-  cursor: pointer;
-  color: #666;
+.reviews-popup .popup-content .popup-header h3 {
+  text-align: center;
+  color: #01265d;
+  font-size: 1.5rem;
 }
-.reviews-popup .popup-content .popup-header .close-button:hover {
-  color: #333;
+.reviews-popup .popup-content .popup-header > :nth-child(2) img {
+  width: 100%;
+  max-width: 150px;
 }
 .reviews-popup .popup-content .reviews-container {
   overflow-y: auto;
   max-height: calc(80vh - 100px);
+  border-radius: 20px;
+  box-shadow: 0px 0px 10px 0.5px rgba(116, 116, 116, 0.25);
 }
 .reviews-popup .popup-content .reviews-container .review-item {
-  padding: 15px 0;
+  padding: 0.25rem 0;
   border-bottom: 1px solid #eee;
+  width: 95%;
+  margin: 0 auto;
 }
 .reviews-popup .popup-content .reviews-container .review-item .review-header {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   margin-bottom: 10px;
 }
 .reviews-popup .popup-content .reviews-container .review-item .review-header .stars {
