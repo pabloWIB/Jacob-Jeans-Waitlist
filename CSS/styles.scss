@@ -10,6 +10,7 @@ $whiteBone: #f5f5f5;
 
 body {
   background: $whiteBone;
+  font-family: "Young Serif", serif;
   overflow-x: hidden;
 }
 
@@ -67,12 +68,6 @@ body {
   }
 }
 
-#aboutTitle {
-  cursor: pointer;
-  display: inline-block;
-  position: relative;
-}
-
 .dropdown-content {
   position: absolute;
   background-color: #fff;
@@ -86,41 +81,63 @@ body {
   left: 0%;
   opacity: 0;
   transition: all 0.3s ease-in-out;
+  h2 {
+    margin-top: 0;
+    text-align: center;
+    font-size: 2rem;
+    color: #333;
+  }
+  .founder {
+    font-style: italic;
+    margin: 20px 0;
+  }
+  .contact-section {
+    margin-top: 20px;
+    padding-top: 15px;
+    border-top: 1px solid #eee;
+  }
+  .business-enquiries {
+    display: inline-block;
+    color: #0066cc;
+    text-decoration: none;
+    margin-top: 5px;
+  }
+  .business-enquiries:hover {
+    text-decoration: underline;
+  }
+}
+
+@media(max-width:750px){
+  .dropdown-content {
+    padding: 20px;
+    h2 {
+      font-size: 1.2rem;
+      color: #333;
+    }
+    p{
+      font-size: .9rem;
+    }
+    .founder {
+      font-style: italic;
+      margin: 10px 0;
+    }
+    .contact-section {
+      margin-top: 10px;
+      padding-top: 5px;
+    }
+    .business-enquiries {
+      display: inline-block;
+      color: #0066cc;
+      text-decoration: none;
+      margin-top: 5px;
+    }
+  }
 }
 
 .dropdown-content.show {
   top: 10%;
   left: 2.5%;
   opacity: 1;
-}
-
-.dropdown-content h2 {
-  margin-top: 0;
-  text-align: center;
-  font-size: 2rem;
-  color: #333;
-}
-
-.founder {
-  font-style: italic;
-  margin: 20px 0;
-}
-
-.contact-section {
-  margin-top: 20px;
-  padding-top: 15px;
-  border-top: 1px solid #eee;
-}
-
-.business-enquiries {
-  display: inline-block;
-  color: #0066cc;
-  text-decoration: none;
-  margin-top: 5px;
-}
-
-.business-enquiries:hover {
-  text-decoration: underline;
 }
 
 .popup-content {
@@ -248,7 +265,6 @@ p {
           font-weight: 500;
           font-size: 1.05rem;
           color: $whiteBone;
-          font-family: "League Spartan", serif;
           letter-spacing: 1px;
         }
       }
@@ -271,7 +287,6 @@ p {
             color: $darkBlue;
           }
           input {
-            font-family: "League Spartan", serif;
             width: 100%;
             padding: 0.75rem 1rem 0.75rem 2.5rem;
             border: 1px solid $darkBlue;
@@ -290,7 +305,6 @@ p {
         }
       }
       .submit-btn {
-        font-family: "League Spartan", serif;
         letter-spacing: 0.8px;
         display: inline-flex;
         align-items: center;
@@ -391,7 +405,6 @@ p {
           font-weight: 500;
           font-size: 1.35rem;
           color: white;
-          font-family: "Libre Baskerville", serif;
           letter-spacing: 1px;
         }
         > :nth-child(3) {
@@ -457,10 +470,6 @@ p {
 .thank-you-container-show {
   opacity: 1;
   pointer-events: all;
-}
-
-@media (max-width: 750px) {
-
 }
 
 .reviews-popup {
@@ -575,6 +584,73 @@ p {
   }
 }
 
+@media(max-width: 750px){
+  .reviews-popup {
+    .popup-content {
+      padding: 10px;
+      border-radius: 0px;
+      width: 100%;
+      max-height: 100vh;
+      > :nth-child(1) {
+        > :nth-child(1) {
+          > :nth-child(1) {
+            padding: 0.125rem;
+            cursor: pointer;
+            img {
+              max-width: 35px;
+            }
+          }
+        }
+      }
+      .popup-header {
+        padding-bottom: 0.75rem;
+        gap: .25rem;
+        >:nth-child(1){
+          h3 {
+            font-size: 1.25rem;
+          }
+        }
+      }
+      >:nth-child(2){
+        img{
+          width: 100%;
+          max-width: 200px;
+        }
+      }
+      .reviews-container {
+        .review-item {
+          padding: 0.25rem 0;
+          .review-header {
+            margin-bottom: 0px;
+            >:nth-child(1){
+              >:nth-child(1){
+                display: flex;
+                flex-flow: row wrap;
+                align-items: center;
+                gap: .75rem;
+                >:nth-child(2){
+                  img{
+                    width: 100%;
+                    max-width: 17.5px;
+                  }
+                }
+              }
+            }
+            .stars {
+              color: #ffd700;
+              margin-top: 5px;
+            }
+            .review-date {
+              color: #666;
+              font-size: 0.9em;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
 .reviews-popup.active {
   display: flex;
   justify-content: center;
@@ -665,7 +741,6 @@ main {
         div {
           h2 {
             all: unset;
-            font-family: "Fanwood Text", serif;
             font-weight: 600;
             font-size: 1.2rem;
             letter-spacing: 1px;
@@ -752,7 +827,6 @@ main {
             font-size: 1.2rem;
             > :nth-child(1) {
               label {
-                font-family: "League Spartan", serif;
                 letter-spacing: 1.5px;
                 font-weight: 600;
                 color: $whiteBone;
@@ -778,7 +852,6 @@ main {
                 border-radius: 0.375rem;
                 transition: border-color 0.2s ease;
                 outline: none;
-                font-family: "League Spartan", serif;
                 &:focus {
                   border-color: #3b82f6;
                   box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
@@ -803,7 +876,6 @@ main {
               cursor: pointer;
               transition: background-color 0.2s ease;
               white-space: nowrap;
-              font-family: "League Spartan", serif;
               transition: 0.45s;
               &:hover {
                 background-color: #255db1;

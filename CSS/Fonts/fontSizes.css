@@ -1,27 +1,7 @@
-@import url("https://fonts.googleapis.com/css2?family=Fanwood+Text:ital@0;1&family=League+Spartan:wght@100..900&display=swap");
-@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Young+Serif&display=swap');
 
-.fanwood-text-regular {
-  font-family: "Fanwood Text", serif;
-  /* font-weight: 100 - 900; */
-  font-style: normal;
-}
-
-.fanwood-text-regular-italic {
-  font-family: "Fanwood Text", serif;
-  /* font-weight: 100 - 900; */
-  font-style: italic;
-}
-
-.league-spartan {
-  font-family: "League Spartan", serif;
-  font-optical-sizing: auto;
-  /* font-weight: 100 - 900; */
-  font-style: normal;
-}
-
-.libre-baskerville-regular {
-  font-family: "Libre Baskerville", serif;
+.young-serif-regular {
+  font-family: "Young Serif", serif;
   font-weight: 400;
   font-style: normal;
 }
