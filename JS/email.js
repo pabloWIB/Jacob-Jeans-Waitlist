@@ -1,3 +1,4 @@
+
 emailjs.init('Amo5GBjS_00-An44w')
 
 const btn = document.getElementById('button');
@@ -8,7 +9,7 @@ document.getElementById('form').addEventListener('submit', function (event) {
 
     btn.value = 'Suscribing...';
 
-    const serviceID = 'default_service';
+    const serviceID = 'service_bjy0bsa';
     const templateID = 'template_inofmni';
 
     emailjs.sendForm(serviceID, templateID, this)
@@ -29,7 +30,7 @@ document.getElementById('form2').addEventListener('submit', function (event) {
 
     btn2.value = 'Suscribing...';
 
-    const serviceID = 'default_service';
+    const serviceID = 'service_bjy0bsa';
     const templateID = 'template_1n53v5q';
 
     emailjs.sendForm(serviceID, templateID, this)
