@@ -1,0 +1,303 @@
+/* ==========================================================================
+   layout.css — container, intro screen, stage, topbar, hero, footer
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   Container
+   -------------------------------------------------------------------------- */
+
+.container {
+  width: min(100% - 2 * var(--space-4), var(--container-max));
+  margin-inline: auto;
+}
+
+/* --------------------------------------------------------------------------
+   Intro screen
+   The stage is fully visible without JavaScript; the intro only exists for
+   browsers that run the `no-js` -> `js` swap in the document head.
+   -------------------------------------------------------------------------- */
+
+.intro {
+  display: none;
+}
+
+.js .intro {
+  position: fixed;
+  z-index: 50;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-4);
+  background-color: var(--color-surface);
+  pointer-events: none;
+  animation: intro-sequence 1700ms ease both;
+}
+
+.intro__mark {
+  width: min(100%, 16rem);
+}
+
+/* --------------------------------------------------------------------------
+   Stage
+   -------------------------------------------------------------------------- */
+
+.stage {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  min-height: 100svh;
+  /* Contains the transient reveal transforms so the topbar sliding down and
+     the footer sliding up never add scrollable area. Safe because min-height
+     lets the stage grow with its content: nothing real is ever clipped. */
+  overflow: clip;
+  background-color: var(--color-navy-dark);
+  background-image: url("../img/content/jacob-jeans-hoodie-st-lucia.webp");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.js .stage {
+  animation: stage-reveal 600ms ease 1400ms both;
+}
+
+/* --------------------------------------------------------------------------
+   Topbar
+   -------------------------------------------------------------------------- */
+
+.topbar {
+  position: relative;
+  z-index: 10;
+  background-color: var(--color-navy);
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.45);
+}
+
+.js .topbar {
+  animation: slide-from-top 500ms ease 2100ms both;
+}
+
+.topbar__list {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+}
+
+/* --------------------------------------------------------------------------
+   Hero
+   -------------------------------------------------------------------------- */
+
+.hero {
+  flex: 1;
+  display: grid;
+  place-items: center;
+  padding-block: var(--space-6);
+}
+
+.hero__inner {
+  display: grid;
+  gap: var(--space-3);
+  justify-items: center;
+  width: min(100% - 2 * var(--space-4), 42rem);
+  margin-inline: auto;
+  text-align: center;
+}
+
+.hero__title {
+  width: 100%;
+  margin: 0;
+}
+
+.hero__status {
+  width: 100%;
+  max-width: none;
+}
+
+/* Block-level images are not centred by text-align, so do it explicitly. */
+.hero__wordmark,
+.hero__lettering {
+  margin-inline: auto;
+}
+
+.hero__wordmark {
+  width: min(100%, 17.5rem);
+}
+
+.hero__lettering {
+  width: min(100%, 26rem);
+}
+
+.js .hero__title {
+  animation: zoom-settle 600ms ease 1700ms both;
+}
+
+.js .hero__status {
+  animation: drop-in 600ms ease 2000ms both;
+}
+
+/* --------------------------------------------------------------------------
+   Footer
+   -------------------------------------------------------------------------- */
+
+.site-footer {
+  position: relative;
+  z-index: 10;
+  background-color: var(--color-navy);
+}
+
+.js .site-footer {
+  animation: slide-from-bottom 500ms ease 2200ms both;
+}
+
+.site-footer__inner {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  padding-block: var(--space-3);
+}
+
+.site-footer__share {
+  order: 2;
+}
+
+/* --------------------------------------------------------------------------
+   Animations
+   -------------------------------------------------------------------------- */
+
+@keyframes intro-sequence {
+  0% {
+    opacity: 0;
+    visibility: visible;
+    transform: scale(0.85);
+  }
+
+  29%,
+  65% {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  100% {
+    opacity: 0;
+    visibility: hidden;
+    transform: scale(2);
+  }
+}
+
+@keyframes stage-reveal {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slide-from-top {
+  from {
+    opacity: 0;
+    transform: translateY(-100%);
+  }
+
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes slide-from-bottom {
+  from {
+    opacity: 0;
+    transform: translateY(100%);
+  }
+
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes zoom-settle {
+  from {
+    opacity: 0;
+    transform: scale(1.6);
+  }
+
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes drop-in {
+  from {
+    opacity: 0;
+    transform: translateY(-1.5rem) scale(0.85);
+  }
+
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   Media queries
+   -------------------------------------------------------------------------- */
+
+@media (min-width: 480px) {
+  .intro__mark {
+    width: min(100%, 21rem);
+  }
+
+  .hero__wordmark {
+    width: min(100%, 21rem);
+  }
+
+  .hero__lettering {
+    width: min(100%, 30rem);
+  }
+}
+
+@media (min-width: 768px) {
+  .intro__mark {
+    width: min(100%, 23.5rem);
+  }
+
+  .hero__wordmark {
+    width: min(100%, 23.5rem);
+  }
+
+  .hero__lettering {
+    width: min(100%, 35rem);
+  }
+}
+
+@media (min-width: 1024px) {
+  .site-footer__inner {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-5);
+  }
+
+  .site-footer__share {
+    order: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .js .intro {
+    display: none;
+  }
+
+  .js .stage,
+  .js .topbar,
+  .js .hero__title,
+  .js .hero__status,
+  .js .site-footer {
+    animation: none;
+  }
+}
